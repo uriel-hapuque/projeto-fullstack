@@ -7,8 +7,8 @@ import {
 } from "../controllers/users.controller";
 import { validateRequestBody } from "../middlewares/validateMiddlewares/validateRequestBody.middleaware";
 import { updateUserSchema, userRequestSchema } from "../schemas/users.schema";
-import { verifyIfEmailAlreadyExists } from "../middlewares/verifyMiddlewares/verifyIfEmailAlreadyExists.middleware";
-import { verifyIfNumberIsAlreadyRegistered } from "../middlewares/verifyMiddlewares/verifyIfNumberIsAlreadyRegistered.middleware";
+import { verifyIfUserEmailAlreadyExists } from "../middlewares/verifyMiddlewares/verifyIfUserEmailAlreadyExists.middleware";
+import { verifyIfUserNumberIsAlreadyRegistered } from "../middlewares/verifyMiddlewares/verifyIfUserNumberIsAlreadyRegistered.middleware";
 import { validateToken } from "../middlewares/validateMiddlewares/validateToken.middleware";
 import { verifyIfUserExistsByParamId } from "../middlewares/verifyMiddlewares/verifyIfUserExistsByParamId.middleware";
 import { verifyIfIsAccountOwner } from "../middlewares/verifyMiddlewares/verifyIfIsAccountOwner.middleware";
@@ -17,8 +17,8 @@ export const usersRoutes: Router = Router();
 usersRoutes.post(
   "",
   validateRequestBody(userRequestSchema),
-  verifyIfEmailAlreadyExists,
-  verifyIfNumberIsAlreadyRegistered,
+  verifyIfUserEmailAlreadyExists,
+  verifyIfUserNumberIsAlreadyRegistered,
   createUserController
 );
 
@@ -38,6 +38,6 @@ usersRoutes.patch(
   validateRequestBody(updateUserSchema),
   verifyIfUserExistsByParamId,
   verifyIfIsAccountOwner,
-  verifyIfNumberIsAlreadyRegistered,
+  verifyIfUserNumberIsAlreadyRegistered,
   updateUserController
 );

@@ -3,7 +3,7 @@ import { Repository } from "typeorm";
 import { User } from "../../entities/users.entities";
 import { AppDataSource } from "../../data-source";
 import { AppError } from "../../error";
-export const verifyIfEmailAlreadyExists = async (
+export const verifyIfUserEmailAlreadyExists = async (
   req: Request,
   res: Response,
   next: NextFunction

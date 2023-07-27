@@ -26,5 +26,5 @@ export const handleErrors = (
     });
   }
 
-  return res.status(500).json({ message: "internal server error" });
+  return res.status(500).json({ message: "erro do servidor interno" });
 };

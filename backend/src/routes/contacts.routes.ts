@@ -11,8 +11,10 @@ import {
   updateContactRequestSchema,
 } from "../schemas/contact.schema";
 import { validateToken } from "../middlewares/validateMiddlewares/validateToken.middleware";
-import { verifyIfIsAccountOwner } from "../middlewares/verifyMiddlewares/verifyIfIsAccountOwner.middleware";
+
 import { verifyIfIsContactOwner } from "../middlewares/verifyMiddlewares/verifyIfIsContactOwner.middleware";
+import { verifyIfContactNumberIsAlreadyRegistered } from "../middlewares/verifyMiddlewares/verifyIfContactNumberIsAlreadyRegistered.middleware";
+import { verifyIfContactEmailAlreadyExists } from "../middlewares/verifyMiddlewares/verifyIfContactEmailAlreadyExists.middleware";
 
 export const contactsRoutes: Router = Router();
 
@@ -20,6 +22,8 @@ contactsRoutes.post(
   "/",
   validateToken,
   validateRequestBody(contactRequestSchema),
+  verifyIfContactNumberIsAlreadyRegistered,
+  verifyIfContactEmailAlreadyExists,
   createContactController
 );
 
@@ -30,6 +34,8 @@ contactsRoutes.patch(
   validateToken,
   validateRequestBody(updateContactRequestSchema),
   verifyIfIsContactOwner,
+  verifyIfContactNumberIsAlreadyRegistered,
+  verifyIfContactEmailAlreadyExists,
   updateContactController
 );
 

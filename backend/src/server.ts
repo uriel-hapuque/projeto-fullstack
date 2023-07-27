@@ -3,11 +3,11 @@ import { AppDataSource } from "./data-source";
 
 AppDataSource.initialize()
   .then(() => {
-    console.log("Server is running");
+    console.log("Server está rodando");
     app.listen(3000, () => {
       console.log("Servidor executando");
     });
   })
   .catch((err) => {
-    console.error("Error during Data Source initialization", err);
+    console.error("Erro durante a inicialização do Data Source", err);
   });

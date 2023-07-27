@@ -3,7 +3,7 @@ import { Repository } from "typeorm";
 import { User } from "../../entities/users.entities";
 import { AppDataSource } from "../../data-source";
 import { AppError } from "../../error";
-export const verifyIfNumberIsAlreadyRegistered = async (
+export const verifyIfUserNumberIsAlreadyRegistered = async (
   req: Request,
   res: Response,
   next: NextFunction
