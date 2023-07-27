@@ -5,11 +5,13 @@ import {
   CreateDateColumn,
   BeforeInsert,
   BeforeUpdate,
+  OneToMany,
 } from "typeorm";
 import { getRounds, hashSync } from "bcryptjs";
+import { Contact } from "./contacts.entities";
 
 @Entity("users")
-class User {
+export class User {
   @PrimaryGeneratedColumn("increment")
   id: number;
 
@@ -28,6 +30,9 @@ class User {
   @CreateDateColumn({ type: "date" })
   createdAt: Date | string;
 
+  @OneToMany(() => Contact, (contact) => contact.user)
+  contacts: Contact[];
+
   @BeforeInsert()
   @BeforeUpdate()
   hashPass() {
@@ -37,5 +42,3 @@ class User {
     }
   }
 }
-
-export { User };
