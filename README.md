@@ -3,7 +3,7 @@
 
 ## REGISTRO/CRIAÇÃO DE USUÁRIO
 
-localhost:3000/users/register
+### localhost:3000/users/register
 
 ENTRADA:
 
@@ -27,7 +27,7 @@ SAÍDA:
 
 ## LOGIN  
 
-localhost:3000/login
+### localhost:3000/login
 
 ENTRADA:
 
