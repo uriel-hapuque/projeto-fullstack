@@ -1,6 +1,5 @@
 # ROTAS DE USUÁRIOS 
 
-
 ## REGISTRO/CRIAÇÃO DE USUÁRIO
 
 ### localhost:3000/users/register
