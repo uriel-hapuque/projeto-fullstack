@@ -9,7 +9,7 @@ entrada -
 {
 	"email": "teste@mail.com",
 	"name": "Teste", 
-	"password": "Teste",
+	"password": "teste",
 	"number": "7399921653515"
 }
 
