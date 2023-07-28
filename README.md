@@ -29,7 +29,7 @@ LOGIN - localhost:3000/login
 entrada - 
 {
 	"email": "teste@mail.com",
-	"password": "Teste"
+	"password": "teste"
 }
 
 saída -
