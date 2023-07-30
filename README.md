@@ -4,6 +4,9 @@
 
     DEPENDENCIAS DO FRONTEND:
     @hookforms/resolvers, axios, react, react-dom, react-hook-form, react-router-dom, react-toastify, styled-components, zod
+
+## COMANDO PARA INSTALAR AS DEPENDÊNCIAS DO BACKEND E FRONTEND (EXECUTAR NO TERMINAL INTEGRADO DAS RESPECTIVAS PASTAS)
+	npm install --production
     
 
 # ROTAS DE USUÁRIOS
