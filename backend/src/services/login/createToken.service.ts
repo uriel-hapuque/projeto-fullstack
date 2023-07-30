@@ -9,7 +9,7 @@ import "dotenv/config";
 
 type tLoginResponse = {
   token: string;
-  user: User;
+  userId: number;
 };
 
 export const createTokenService = async (
@@ -35,8 +35,8 @@ export const createTokenService = async (
     expiresIn: "24h",
     subject: String(user.id),
   });
-
-  const loginReturn = { token, user };
+  const userId: number = user.id;
+  const loginReturn = { token, userId };
 
   return loginReturn;
 };

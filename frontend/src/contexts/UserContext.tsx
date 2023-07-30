@@ -21,22 +21,16 @@ interface iUserContextValues {
   updateUser: (data: updateUserValidator) => Promise<void>
   login: (data: tLoginValidator) => Promise<void>
   logout: () => Promise<void>
-  user: iUser | null
-  setUser: React.Dispatch<React.SetStateAction<iUser | null>>;
+  user: number
+  setUser: React.Dispatch<React.SetStateAction<number>>;
 }
 
 interface iLoginResponse {
   token: string
-  user: iUser
+  userId: number
 }
 
-interface iUser {
-  id: number,
-  createAt: string,
-  number: string,
-  name: string,
-  email: string
-}
+
 
 
 
@@ -44,7 +38,7 @@ export const UserContext = createContext({} as iUserContextValues)
 
 export const UserProvider = ({ children }: iChildrenProp) => {
   const navigate = useNavigate()
-  const [user, setUser] = useState<iUser | null>(null)
+  const [user, setUser] = useState<number>(0)
   useEffect(() => {
 
     const getUser = async () => {
@@ -131,12 +125,12 @@ export const UserProvider = ({ children }: iChildrenProp) => {
     try {
       const response = await api.post<iLoginResponse>("/login", data)
       const token: string = response.data.token
-      const userId: number = response.data.user.id
+      const userId: number = response.data.userId
 
       api.defaults.headers.common.Authorization = `Bearer ${token}`
       localStorage.setItem("RelationsManager:token", token)
       localStorage.setItem("RelationsManager:userId", String(userId))
-      setUser(response.data.user)
+      setUser(response.data.userId)
       toast.success("Usuário logado com sucesso", {
         autoClose: 3000,
       });

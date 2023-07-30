@@ -14,7 +14,7 @@ export const createContactService = async (
 
   const user: any = await userRepo.findOneBy({ id: userId });
 
-  const contact = contactRepo.create({ ...contactData, user: user! });
+  const contact = contactRepo.create({ ...contactData, user: user.id });
 
   await contactRepo.save(contact);
 

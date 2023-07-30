@@ -5,6 +5,7 @@ export const GlobalStyles = createGlobalStyle`
     background-color: #23262b;
     color: #fff;
     font-family: 'Roboto', sans-serif;
+    height: 100%;
 
     .modal{
       color: #23262b;
