@@ -8,7 +8,7 @@ export const createTokenController = async (
 ): Promise<Response> => {
   const loginData: tLoginRequest = req.body;
 
-  const token = await createTokenService(loginData);
+  const login = await createTokenService(loginData);
 
-  return res.status(200).json({ token });
+  return res.status(200).json(login);
 };

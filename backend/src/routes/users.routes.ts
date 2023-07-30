@@ -2,7 +2,7 @@ import { Router } from "express";
 import {
   createUserController,
   deleteUserController,
-  getAllUsersController,
+  getUserController,
   updateUserController,
 } from "../controllers/users.controller";
 import { validateRequestBody } from "../middlewares/validateMiddlewares/validateRequestBody.middleaware";
@@ -30,7 +30,7 @@ usersRoutes.delete(
   deleteUserController
 );
 
-usersRoutes.get("", getAllUsersController);
+usersRoutes.get("/:id", verifyIfUserExistsByParamId, getUserController);
 
 usersRoutes.patch(
   "/:id",

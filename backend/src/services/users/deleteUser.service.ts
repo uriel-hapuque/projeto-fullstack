@@ -9,5 +9,7 @@ export const deleteUserService = async (userId: number): Promise<void> => {
     id: userId,
   });
 
+  console.log(user);
+
   await userRepo.remove(user!);
 };

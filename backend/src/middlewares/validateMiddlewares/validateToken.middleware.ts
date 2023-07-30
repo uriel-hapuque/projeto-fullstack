@@ -15,8 +15,6 @@ export const validateToken = (
 
   token = token.split(" ")[1];
 
-  console.log(token);
-
   jwt.verify(token, process.env.SECRET_KEY!, (error: any, decoded: any) => {
     if (error) {
       throw new AppError(error.message, 401);

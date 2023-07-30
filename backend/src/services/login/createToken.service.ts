@@ -7,9 +7,14 @@ import { Repository } from "typeorm";
 import jwt from "jsonwebtoken";
 import "dotenv/config";
 
+type tLoginResponse = {
+  token: string;
+  user: User;
+};
+
 export const createTokenService = async (
   loginData: tLoginRequest
-): Promise<string | void> => {
+): Promise<tLoginResponse | void> => {
   const userRepo: Repository<User> = AppDataSource.getRepository(User);
 
   const user: User | null = await userRepo.findOneBy({
@@ -23,7 +28,7 @@ export const createTokenService = async (
   const passIsEqual: boolean = await compare(loginData.password, user.password);
 
   if (!passIsEqual) {
-    throw new AppError("credenciais inválidas", 401);
+    throw new AppError("credenciais inválidas", 403);
   }
 
   const token = jwt.sign({ name: user.name }, process.env.SECRET_KEY!, {
@@ -31,5 +36,7 @@ export const createTokenService = async (
     subject: String(user.id),
   });
 
-  return token;
+  const loginReturn = { token, user };
+
+  return loginReturn;
 };
