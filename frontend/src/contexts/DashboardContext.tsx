@@ -1,6 +1,8 @@
 import { ReactNode, createContext, useEffect, useState } from "react"
 import { api } from "../services/api"
 import { iContact } from "../pages/Dashboard/Dashboard"
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 interface iChildrenProps {
   children: ReactNode
@@ -58,31 +60,41 @@ export const DashboardProvider = ({ children }: iChildrenProps) => {
   const registerContact = async (data: iContactRequest) => {
     try {
       const token: string | null = localStorage.getItem("RelationsManager:token")
-      const response = await api.post("/contacts/", data, {
+      await api.post("/contacts/", data, {
         headers: {
           Authorization: `Bearer ${token}`
         }
       })
 
+      toast.success("Contato registrado!", {
+        autoClose: 2000,
+      });
+      setRegisterContactModal(false)
 
-    } catch (error) {
-      console.log(error)
+    } catch (error: any) {
+      toast.error(error.response.data.message, {
+        autoClose: 3000,
+      });
     }
   }
 
   const updateContact = async (data: iContactRequest) => {
     try {
       const token: string | null = localStorage.getItem("RelationsManager:token")
-      console.log(contactId)
-      const response = await api.patch(`/contacts/${contactId}`, data, {
+      await api.patch(`/contacts/${contactId}`, data, {
         headers: {
           Authorization: `Bearer ${token}`
         }
       })
+      toast.info("Dados do contato atualizados", {
+        autoClose: 2000,
+      });
+      setEditContactInfoModal(false)
 
-
-    } catch (error) {
-      console.log(error)
+    } catch (error: any) {
+      toast.error(error.response.data.message, {
+        autoClose: 2000,
+      });
     }
   }
 
@@ -94,14 +106,22 @@ export const DashboardProvider = ({ children }: iChildrenProps) => {
           Authorization: `Bearer ${token}`
         }
       })
+      toast.info("Contato deletado!", {
+        autoClose: 2000,
+      });
 
-    } catch (error) {
-      console.log(error)
+    } catch (error: any) {
+      toast.error(error.response.data.message, {
+        autoClose: 2000,
+      });
     }
   }
   return (
     <DashboardContext.Provider value={{
-      deleteContact, registerContact, updateContact, registerContactModal, setRegisterContactModal,
+      deleteContact, registerContact,
+      updateContact,
+      registerContactModal,
+      setRegisterContactModal,
       deleteContactModal,
       setDeleteContactModal,
       deleteUserModal,
@@ -109,7 +129,10 @@ export const DashboardProvider = ({ children }: iChildrenProps) => {
       editUserInfoModal,
       setEditUserInfoModal,
       editContactInfoModal,
-      setEditContactInfoModal, contacts, contactId, setContactId
+      setEditContactInfoModal,
+      contacts,
+      contactId,
+      setContactId
     }}>
       {children}
     </DashboardContext.Provider>

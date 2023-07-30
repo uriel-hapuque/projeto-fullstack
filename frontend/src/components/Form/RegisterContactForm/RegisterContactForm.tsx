@@ -21,7 +21,7 @@ export const RegisterContactForm = () => {
         <input type="text" id="name"  {...register("name")} />
         <label htmlFor="email">Email:</label>
         <input type="email" id="email"  {...register("email")} />
-        <label htmlFor="number">Número:</label>
+        <label htmlFor="number">Número de telefone:</label>
         <input type="text" id="number"  {...register("number")} />
 
         <Button type="submit" buttonText="Registrar contato" />

@@ -9,6 +9,7 @@ export const StyledRegisterForm = styled.div`
     width: 200px;
     height: 250px;
     justify-content: center;
+    margin-block: 40px;
     input {
     }
   }

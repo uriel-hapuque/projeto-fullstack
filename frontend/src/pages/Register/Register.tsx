@@ -9,6 +9,7 @@ export const Register = () => {
 
   return (
     <StyledRegisterPage>
+      <h1>RelationsManager</h1>
       <h2>Registrar-se</h2>
       <RegisterForm />
       <Link to="/">

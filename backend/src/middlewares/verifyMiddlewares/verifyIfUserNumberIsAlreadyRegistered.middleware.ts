@@ -15,7 +15,7 @@ export const verifyIfUserNumberIsAlreadyRegistered = async (
   const user = await userRepo.findOne({ where: { number: userNumber } });
 
   if (user) {
-    throw new AppError("Number is already registered", 409);
+    throw new AppError("Número de telefone já registrado", 409);
   }
 
   return next();

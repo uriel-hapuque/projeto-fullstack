@@ -18,9 +18,9 @@ export const LoginForm = () => {
   return (
     <StyledLoginForm>
       <form onSubmit={handleSubmit(login)}>
-        <label htmlFor="email">Email</label>
+        <label htmlFor="email">Email:</label>
         <input type="email" id="email"  {...register("email")} />
-        <label htmlFor="password">Senha</label>
+        <label htmlFor="password">Senha:</label>
         <input type="password" id="password"  {...register("password")} />
         <Button type="submit" buttonText="Fazer login" />
       </form>

@@ -15,7 +15,7 @@ export const verifyIfUserEmailAlreadyExists = async (
   const user = await userRepo.findOne({ where: { email: userEmail } });
 
   if (user) {
-    throw new AppError("Email already exists", 409);
+    throw new AppError("Email já registrado", 409);
   }
 
   return next();

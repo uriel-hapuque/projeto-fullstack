@@ -17,7 +17,7 @@ export const verifyIfContactNumberIsAlreadyRegistered = async (
   });
 
   if (contact) {
-    throw new AppError("Contact number is already registered", 409);
+    throw new AppError("Número do contato já está registrado", 409);
   }
 
   return next();

@@ -14,13 +14,13 @@ export const DeleteUserModal = () => {
           <Button
             type="submit"
             onClick={() => setDeleteUserModal(false)}
-            buttonText={"Fechar"}
+            buttonText={"X"}
           />
         </div>
 
         <Button type="submit" buttonText="Deletar conta" onClick={() => {
           deleteUser(user?.id)
-          setDeleteUserModal(true)
+          setDeleteUserModal(false)
         }} />
       </div>
 

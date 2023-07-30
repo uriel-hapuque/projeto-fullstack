@@ -14,14 +14,11 @@ export const EditContactInfoModal = () => {
           <Button
             type="submit"
             onClick={() => setEditContactInfoModal(false)}
-            buttonText={"Fechar"}
+            buttonText={"X"}
           />
         </div>
         <UpdateContactForm />
-        {/* <Button type="submit" buttonText="Atualizar dados" onClick={() => {
 
-          setEditContactInfoModal(true)
-        }} /> */}
 
       </div>
 

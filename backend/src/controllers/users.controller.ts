@@ -4,7 +4,6 @@ import {
   tUpdateUserRequest,
   tUserRequest,
   tUserResponse,
-  tUsersResponse,
 } from "../interfaces/users.interface";
 import { createUserService } from "../services/users/createUser.service";
 import { deleteUserService } from "../services/users/deleteUser.service";

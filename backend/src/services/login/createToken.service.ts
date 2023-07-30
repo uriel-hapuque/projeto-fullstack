@@ -22,13 +22,13 @@ export const createTokenService = async (
   });
 
   if (!user) {
-    throw new AppError("credenciais inválidas", 401);
+    throw new AppError("Credenciais inválidas", 403);
   }
 
   const passIsEqual: boolean = await compare(loginData.password, user.password);
 
   if (!passIsEqual) {
-    throw new AppError("credenciais inválidas", 403);
+    throw new AppError("Credenciais inválidas", 403);
   }
 
   const token = jwt.sign({ name: user.name }, process.env.SECRET_KEY!, {

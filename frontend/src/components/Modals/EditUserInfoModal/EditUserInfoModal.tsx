@@ -1,27 +1,27 @@
 import { useDashboardContext } from "../../../hooks/useDashboardContext"
 import { Button } from "../../Button/Button"
+import { UpdateUserForm } from "../../Form/UpdateUserForm/UpdateUserForm"
 import { StyledModalContainer } from "./style"
 
-export const DeleteContactModal = () => {
-  const { setDeleteContactModal, deleteContact, contactId } = useDashboardContext()
-
+export const EditUserInfoModal = () => {
+  const { setEditUserInfoModal } = useDashboardContext()
   return (
     <StyledModalContainer>
+
       <div className="modal">
         <div className="modalHeader">
-          <h3>Tem certeza que quer deletar o contato?</h3>
+          <h3>Atualize os dados do usuário</h3>
           <Button
             type="submit"
-            onClick={() => setDeleteContactModal(false)}
+            onClick={() => setEditUserInfoModal(false)}
             buttonText={"X"}
           />
         </div>
+        <UpdateUserForm />
 
-        <Button type="submit" buttonText="Deletar contato" onClick={() => {
-          deleteContact(contactId)
-          setDeleteContactModal(false)
-        }} />
+
       </div>
+
 
     </StyledModalContainer>
   )
