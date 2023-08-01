@@ -7,13 +7,25 @@
 
 ## COMANDO PARA INSTALAR AS DEPENDÊNCIAS DO BACKEND E FRONTEND (EXECUTAR NO TERMINAL INTEGRADO DAS RESPECTIVAS PASTAS)
 	npm install --production
+
+ ## COMANDO PARA RODAR O SERVIDOR DO BACKEND E FRONTEND (EXECUTAR NO TERMINAL INTEGRADO DAS RESPECTIVAS PASTAS)
+	npm run dev
     
 
-# ROTAS DE USUÁRIOS
+## _*ROTAS FRONTEND*_
 
-## REGISTRO/CRIAÇÃO DE USUÁRIO (EMAIL E NUMBER DEVEM SER ÚNICOS PARA CADA USUÁRIO)
+#### localhost:5173/ - PÁGINA DE LOGIN
+#### localhost:5173/register - PÁGINA DE REGISTRO (na página de login tem um botão que redireciona para a página de registro)
+#### localhost:5173/dashboard - DASHBOARD (necessário estar logado para acessar a página)
 
-### localhost:3000/users/
+##
+
+## _*ROTAS BACKEND*_
+### ROTAS DE USUÁRIOS
+
+### REGISTRO/CRIAÇÃO DE USUÁRIO (EMAIL E NUMBER DEVEM SER ÚNICOS PARA CADA USUÁRIO)
+
+> localhost:3000/users/
 
 ENTRADA:
      
@@ -34,9 +46,9 @@ SAÍDA:
     	"createdAt": "2023-07-26"
     }
 
-## PEGAR DADOS DO USUÁRIO
+### PEGAR DADOS DO USUÁRIO (NÃO É NECESSÁRIO BEARER TOKEN | USUÁRIO PRECISA EXISTIR)
 
-### localhost:3000/users/{userId}
+> localhost:3000/users/{userId}
 
     {
     	"id": 1,
@@ -46,9 +58,9 @@ SAÍDA:
     	"createdAt": "2023-07-26"
     }
 
-## LOGIN
+### LOGIN
 
-### localhost:3000/login
+> localhost:3000/login
 
 ENTRADA:
 
@@ -64,9 +76,9 @@ SAÍDA:
     	"userId": 15
     }
 
-## ATUALIZAR DADOS DO USUÁRIO (SOMENTE O USUÁRIO PODE ATUALIZAR OS PRÓPRIOS DADOS | NECESSÁRIO INFORMAR BEARER TOKEN)
+### ATUALIZAR DADOS DO USUÁRIO (SOMENTE O USUÁRIO PODE ATUALIZAR OS PRÓPRIOS DADOS | NECESSÁRIO INFORMAR BEARER TOKEN)
 
-### localhost:3000/users/{userId}
+> localhost:3000/users/{userId}
 
 ENTRADA: 
 
@@ -85,9 +97,9 @@ SAÍDA:
     	"createdAt": "2023-07-25"
     }
 
-## DELETAR DADOS DO USUÁRIO (SOMENTE O USUÁRIO PODE DELETAR OS PRÓPRIOS DADOS | NECESSÁRIO INFORMAR BEARER TOKEN)
+### DELETAR DADOS DO USUÁRIO (SOMENTE O USUÁRIO PODE DELETAR OS PRÓPRIOS DADOS | NECESSÁRIO INFORMAR BEARER TOKEN)
 
-### localhost:3000/users/{userId}
+> localhost:3000/users/{userId}
 
 SAÍDA: 
     
@@ -95,11 +107,11 @@ SAÍDA:
         STATUS: 204
     }
 
-# ROTAS DOS CONTATOS (TODAS AS ROTAS DE CONTATOS SÃO NECESSÁRIAS INFORMAR BEARER TOKEN DO USUÁRIO CRIADOR DOS CONTATOS)
+### ROTAS DOS CONTATOS (TODAS AS ROTAS DE CONTATOS SÃO NECESSÁRIAS INFORMAR BEARER TOKEN DO USUÁRIO CRIADOR DOS CONTATOS)
 
-## CRIAR CONTATO (EMAIL E NUMBER DEVEM SER ÚNICOS PARA CADA CONTATO)
+### CRIAR CONTATO (EMAIL E NUMBER DEVEM SER ÚNICOS PARA CADA CONTATO)
 
-### localhost:3000/contacts
+> localhost:3000/contacts
 
 ENTRADA:
 
@@ -120,9 +132,9 @@ SAÍDA:
     	"createdAt": "2023-07-30"
     }
 
-## PEGAR CONTATOS DO USUÁRIO (NECESSÁRIO INFORMAR BEARER TOKEN DO USUÁRIO QUE CRIOU O CONTATO)
+### PEGAR CONTATOS DO USUÁRIO (NECESSÁRIO INFORMAR BEARER TOKEN DO USUÁRIO QUE CRIOU O CONTATO)
 
-### localhost:3000/contacts/
+> localhost:3000/contacts/
 
 SAÍDA: 
 
@@ -143,9 +155,9 @@ SAÍDA:
     	}
     ]
 
-## ATUALIZAR CONTATO
+### ATUALIZAR CONTATO
 
-### localhost:3000/contacts/{contactId}
+> localhost:3000/contacts/{contactId}
 
 ENTRADA: 
 
@@ -164,9 +176,9 @@ SAÍDA:
     	"createdAt": "2023-07-30"
     }
 
-## DELETAR CONTATO
+### DELETAR CONTATO
 
-### localhost/contacts/{contactId}
+> localhost/contacts/{contactId}
 
 SAÍDA: 
 
