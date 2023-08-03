@@ -10,7 +10,7 @@ import { User } from "./users.entities";
 
 @Entity("contacts")
 export class Contact {
-  @PrimaryGeneratedColumn("uuid")
+  @PrimaryGeneratedColumn("increment")
   id: number;
 
   @Column({ type: "varchar", length: 45 })
