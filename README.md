@@ -16,7 +16,7 @@
 	SECRET_KEY=chave_secreta	
 
 ## COMANDO PARA RODAR AS MIGRAÇÕES
-	npm typeorm migration:run -- -d src/data-source
+	npm run typeorm migration:run -- -d src/data-source
  
 ## _*ROTAS FRONTEND*_
 
