@@ -14,7 +14,7 @@
 	
 ## COMANDO PARA INSTALAR AS DEPENDÊNCIAS DO FRONTEND (EXECUTAR NO TERMINAL INTEGRADO DAS RESPECTIVAS PASTAS)
 	DEPENDÊNCIAS:
- 	npm i @hookforms/resolvers axios react react-dom react-hook-form react-router-dom react-toastify styled-components zod
+ 	npm i @hookform/resolvers axios react react-dom react-hook-form react-router-dom react-toastify styled-components zod
   
 	DEPENDÊNCIAS DE DESENVOLVIMENTO:
 	npm i --save-dev @types/react @types/react-dom @types/styled-components @typescript-eslint/eslint-plugin @typescript-eslint/parser @vitejs/plugin-react eslint eslint-plugin-react-hooks eslint-plugin-react-refresh typescript vite
