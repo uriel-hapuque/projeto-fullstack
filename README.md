@@ -5,9 +5,20 @@
     DEPENDENCIAS DO FRONTEND:
     @hookforms/resolvers, axios, react, react-dom, react-hook-form, react-router-dom, react-toastify, styled-components, zod
 
-## COMANDO PARA INSTALAR AS DEPENDÊNCIAS DO BACKEND E FRONTEND (EXECUTAR NO TERMINAL INTEGRADO DAS RESPECTIVAS PASTAS)
-	npm install --production
-
+## COMANDO PARA INSTALAR AS DEPENDÊNCIAS DO BACKEND (EXECUTAR NO TERMINAL INTEGRADO DAS RESPECTIVAS PASTAS)
+	DEPENDÊNCIAS:
+ 	npm i cors @types/cors bcryptjs dotenv express express-async-errors jsonwebtoken reflect-metadata ts-node typeorm zod
+  
+	DEPENDÊNCIAS DE DESENVOLVIMENTO:
+	npm i --save-dev @types/bcryptjs @types/express @types/jsonwebtoken @types/node ts-node-dev typescript
+	
+## COMANDO PARA INSTALAR AS DEPENDÊNCIAS DO FRONTEND (EXECUTAR NO TERMINAL INTEGRADO DAS RESPECTIVAS PASTAS)
+	DEPENDÊNCIAS:
+ 	npm i @hookforms/resolvers axios react react-dom react-hook-form react-router-dom react-toastify styled-components zod
+  
+	DEPENDÊNCIAS DE DESENVOLVIMENTO:
+	npm i --save-dev @types/react @types/react-dom @types/styled-components @typescript-eslint/eslint-plugin @typescript-eslint/parser @vitejs/plugin-react eslint eslint-plugin-react-hooks eslint-plugin-react-refresh typescript vite
+	
  ## COMANDO PARA RODAR O SERVIDOR DO BACKEND E FRONTEND (EXECUTAR NO TERMINAL INTEGRADO DAS RESPECTIVAS PASTAS)
 	npm run dev
  
